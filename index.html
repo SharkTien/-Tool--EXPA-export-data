@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Crawldata HCME</title>
+</head>
+<style>
+    * {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 300;
+    }
+    body {
+        width: 100vw;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding: 0;
+        margin: 0;
+        height: 150vh;
+    }
+
+    header img {
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    section {
+        display: flex;
+        font-size: 18px;
+        width: 100vw;
+        height: 80vh;
+        justify-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #037EF3;
+        font-weight: 600;
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        margin-bottom: -13px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    #slide_1 .example {
+        width: 90vw;
+    }
+
+    .copy-button {
+        padding: 10px 20px;
+        background-color: #037EF3;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+</style>
+<body>
+    <header>
+        <img src="header_1.png"/>
+    </header>
+    <section>
+        <div id="slide_1">
+            <h1>Crawling data from HCME</h1>
+            <p>Mở trang EXPA, dùng bộ lọc  <img class="icon" src="icon_1.png"> các columns theo thứ tự như sau:</p>
+            <p>Applicant Name -> EP ID -> Nationality -> Home LC -> Home MC -> Opportunity -> Organization -> Applied At -> Phone Number -> Slot</p>
+            <img class="example" src="example.png">
+            <p>Ấn vào nút <button class="copy-button" onclick="copyCode()">Copy Code</button> để lấy Script</p>
+            <p>Quay lại trang EXPA, nhấn nút F12, vào tab console và Ctrl+V (paste) Script vừa thao tác sao chép, nhấn Enter </p>
+            <img src="icon_2.png">
+            <p>Trên thanh của EXPA sẽ xuất hiện nút Copy Data, Nhấn vào để lấy data</p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
