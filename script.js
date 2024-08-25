@@ -37,18 +37,29 @@ function copyCode() {
             const endDateRegex = /End date: (\\d{2} \\w{3} \\d{4})/;
             const startDateMatch = dataTip.match(startDateRegex);
             const endDateMatch = dataTip.match(endDateRegex);
+            function formatDate(dateString) {
+                var date = new Date(dateString);
+                var day = date.getDate();
+                var month = date.getMonth() + 1; // getMonth() returns 0-indexed month
+                var year = date.getFullYear();
+                
+                // Concatenate the day, month, and year with slashes
+                return day + '/' + month + '/' + year;
+            }
             const personData = {
                 "EP NAME": formatName(name),
-                ID: id,
-                NATIONALITY: nationality,
                 "HOME LC": homeLC,
                 "HOME MC": homeMC,
+                ID: id,
+                "PHONE NUMBER": String(phone),
+                "EP MANAGER'S CONTACT": '',
+                "EP DOCUMENT": '',
+                "COMING": formatDate(startDateMatch[1]),
+                "DEPARTURE": 'skip',
                 "PROJECT NAME": opportunity,
                 "HOST NAME": organization,
-                "DATE OF APPLY": appliedAt,
-                "PHONE NUMBER": String(phone),
-                "START DATE": startDateMatch[1],
-                "END DATE": endDateMatch[1],
+                "DATE OF APPLY": formatDate(appliedAt),
+                "END DATE": formatDate(endDateMatch[1]),
             };
             personDataList.push(personData);
         });
@@ -78,5 +89,6 @@ function copyCode() {
         .catch(err => {
             alert('Vui lòng báo lại cho chủ sở hữu. Lỗi sao chép: ', err);
         });
+        
 }
 
